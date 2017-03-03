@@ -7,8 +7,11 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ### Create a new post
 
-``` bash
-$ hexo new "My New Post"
+```bash
+
+    $ hexo new "My New Post"
+    troubleshooting
+
 ```
 
 More info: [Writing](https://hexo.io/docs/writing.html)

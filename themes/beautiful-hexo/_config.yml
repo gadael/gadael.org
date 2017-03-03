@@ -1,21 +1,17 @@
 navbar-links:
     Archive: /archives
-    Github: https://github.com/twoyao/beautiful-hexo
-    About: /about/
+    Github: https://github.com/gadael/gadael
+    SaaS: https://www.gadael.com/
 
 avatar: /hexo.png
 favicon: /hexo.png
 
 header:
-    title: "Beautiful Hexo"
-    motto: Build a beautiful and simple website in minutes
+    title: "Leave Management"
+    motto: "Get back your work schedule with open-source"
     bigimgs:
         - src: /bigimgs/01.jpg
-          desc: beautiful island
-        - src: /bigimgs/02.jpg
-          desc: Tropical Fish
-        - src: /bigimgs/03.jpg
-          desc: ocean
+          desc:
 
 rss: /atom.xml
 googlefonts:
@@ -30,17 +26,17 @@ highlight:
 
 footer:
   facebook:
-    link: # your link e.g. https://...
-    title: Facebook
+    link: https://www.facebook.com/Gadael-102438326940648
+    title: Facebook page
     icon: fa-facebook
-    enalbe: false
+    enalbe: true
   weibo:
     link: 'http://weibo.com/bisyao?is_all=1'
     title: Weibo
     icon: fa-weibo
-    enalbe: true
+    enalbe: false
   github:
-    link: 'https://github.com/twoyao'
+    link: 'https://github.com/gadael/gadael'
     title: GitHub
     icon: fa-github
     enable: true
@@ -50,20 +46,20 @@ footer:
     icon: fa-rss
     enable: true
   twitter:
-    link: 'https://twitter.com/twoyao_'
+    link: 'https://twitter.com/G4dael'
     title: Twitter
     icon: fa-twitter
     enable: true
   mail:
-    link: 'mailto:bisyao@gmail.com'
-    title: Email me
+    link: 'mailto:support@gadael.com'
+    title: Email gadael
     icon: fa-envelope
-    enable: true
+    enable: false
   linkin:
-    link: # your link here e.g. http...
+    link: 'https://www.linkedin.com/company/11006685'
     title: LinkedIn
     icon: fa-linkedin
-    enable: false
+    enable: true
   stackoverflow:
     link: # your link here e.g. http...
     title: StackOverflow
@@ -73,6 +69,5 @@ footer:
 google_analytics:
 
 comment:
-  enable: true
+  enable: false
   disqus: twoyao
-
