@@ -84,7 +84,45 @@ Congratulation! your setup is working!
 
 Application listen on localhost only by default, an https reverse proxy will be necessary to open access to users. This will add the ability to serve the application on the default port.
 
+The examples given here are on a Debian system, a similar setup is possible with another distribution or package manager.
+
 #### Using the Apache web server
 
 
 #### Using the nginx web server
+
+Install nginx:
+
+```bash
+apt update
+apt install nginx
+```
+Edit the default site configuration:
+
+```bash
+vi /etc/nginx/sites-available/default
+```
+
+Setting this content will redirect request from port 80 the the port 3000. If a port different than 3000 was used in your gadael configuration, you must change the `proxy_pass` line.
+
+```
+server {
+    listen 80;
+    server_name mydomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+A restart of the server is required:
+
+```bash
+systemctrl restart nginx
+```
