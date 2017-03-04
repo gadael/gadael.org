@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Gadael
-subtitle: Leave management Software
-description: Open-source time management and leave management
-author: Paul de Rosanbo
-language:
+title: Gadael, Open-source Leave management
+subtitle: Time management Software for your business
+description: Manage your teams workschedules using an integrated workflow
+author: Gadael.com
+language: en
 timezone:
 
 # URL

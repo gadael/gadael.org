@@ -150,7 +150,7 @@ img {
   border-radius: 50%;
   margin-left: -50%;
   display: inline-block;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
 }
 .navbar-custom .avatar-container  .avatar-img {
   width: 100%;
@@ -565,4 +565,25 @@ table tr td :last-child {
 .tag:focus, .tag:hover {
   text-decoration: none;
   color: #0085a1
+}
+
+figure.highlight>table,
+figure.highlight>table .code {
+    width: 100%;
+    border: none;
+    padding: 0;
+}
+
+figure.highlight>table tr {
+    border-top: none;
+}
+
+figure.highlight>table .gutter {
+    display:none;
+}
+
+
+.blog-post img {
+    margin-left: auto;
+    margin-right: auto;
 }

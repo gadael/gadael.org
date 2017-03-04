@@ -1,6 +1,6 @@
 navbar-links:
-    Archive: /archives
-    Github: https://github.com/gadael/gadael
+    Docs: https://www.gadael.com/en/docs/version-master
+    About: /about
     SaaS: https://www.gadael.com/
 
 avatar: /logoCenter128.png
@@ -11,7 +11,6 @@ header:
     motto: "Get back your work schedule with open-source"
     bigimgs:
         - src: /bigimgs/01.jpg
-          desc:
 
 rss: /atom.xml
 googlefonts:
@@ -26,15 +25,10 @@ highlight:
 
 footer:
   facebook:
-    link: https://www.facebook.com/Gadael-102438326940648
+    link: 'https://www.facebook.com/Gadael-102438326940648'
     title: Facebook page
     icon: fa-facebook
     enalbe: true
-  weibo:
-    link: 'http://weibo.com/bisyao?is_all=1'
-    title: Weibo
-    icon: fa-weibo
-    enalbe: false
   github:
     link: 'https://github.com/gadael/gadael'
     title: GitHub
