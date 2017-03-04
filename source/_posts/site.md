@@ -4,13 +4,13 @@ title: Gadael.org
 
 ## Functionalities
 
-Gadael is a powerfull leave management application with rights attributions besed on complex rules and periods planification. With Gadael you can:
+Gadael is a powerful leave management application with rights attributions based on complex rules and periods planing. With Gadael you can:
  * Schedule multiples leave renewal periods in advance.
- * Automatically make adjustments of quantity based on the consuption on other rights.
+ * Automatically make adjustments of quantity based on the consumption on other rights.
  * Export your data for your payslip application.
  * Sync plannings with your google calendars.
  * Set up a policy for overtime recovery in the form of holiday entitlements.
- * Multi-level approval workflow
+ * Multi-level approval work-flow
 
 ## Install
 
@@ -24,13 +24,13 @@ The Gadael docker file will be available soon!
 
 ### With git and NPM
 
-Gadael can be installed from the git version, this is the best choice for taking advantage of the lastest features. For this to work, some dependencies need to be installed on the system first, you will have to install the dependencies unsing your system packages manager or manually.
+Gadael can be installed from the git version, this is the best choice for taking advantage of the lastest features. For this to work, some dependencies need to be installed on the system first, you will have to install the dependencies using your system packages manager or manually.
 
 * [nodejs](https://nodejs.org/)
 * [MongoDB](https://www.mongodb.com/), the database server.
 * [git](https://git-scm.com/), this is the version control system used for Gadael development
 * [npm](https://www.npmjs.com/), for nodejs dependencies
-* [bower](https://bower.io/), for frontend dependencies
+* [bower](https://bower.io/), for front-end dependencies
 
 Then the install process can be resumed with this list of commands:
 
@@ -49,7 +49,7 @@ cp config.example.js config.js
 
 You will have to configure an SMTP host and a root url in this file for the emails notifications to work correctly.
 
-After a database initialisation like explained in the "Using Gadael" chapter, you will have to start the server manually with this command:
+After a database initialization like explained in the "Using Gadael" chapter, you will have to start the server manually with this command:
 
 ```bash
 node app.js
@@ -58,7 +58,7 @@ node app.js
 
 ### Use the SaaS version
 
-If you have no server available and want to take advantage of automatic updates to the last version, you can use Gadael directly from [gadael.com](https://www.gadael.com/), it's free for team up to 5 users. If you choose to suscribe to a paid plan you will benefit from the email technical support for all your configuration problems.
+If you have no server available and want to take advantage of automatic updates to the last version, you can use Gadael directly from [gadael.com](https://www.gadael.com/), it's free for team up to 5 users. If you choose to subscribe to a paid plan you will benefit from the email technical support for all your configuration problems.
 
 ## Using Gadael
 
