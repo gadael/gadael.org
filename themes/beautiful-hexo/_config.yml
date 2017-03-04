@@ -3,8 +3,8 @@ navbar-links:
     Github: https://github.com/gadael/gadael
     SaaS: https://www.gadael.com/
 
-avatar: /hexo.png
-favicon: /hexo.png
+avatar: /logoCenter128.png
+favicon: /favicon.ico
 
 header:
     title: "Leave Management"
