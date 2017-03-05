@@ -12,6 +12,10 @@ Gadael is a powerful leave management application with rights attributions based
  * Set up a policy for overtime recovery in the form of holiday entitlements.
  * Multi-level approval work-flow
 
+
+![All devices compatible](images/devices.png)
+
+
 ## Install
 
 ### On a Debian System
@@ -84,14 +88,66 @@ Congratulation! your setup is working!
 
 Application listen on localhost only by default, an https reverse proxy will be necessary to open access to users. This will add the ability to serve the application on the default port.
 
-The examples given here are on a Debian system, a similar setup is possible with another distribution or package manager.
+The examples given here are on a Debian system, a similar setup is possible with another distribution or package manager. We will use mydomain.com as an example URL, you must have a domain name already configured and linked to the web server by DNS configuration.
+
 
 #### Using the Apache web server
 
 
+So first of all, we need to install [Apache2](https://httpd.apache.org/):
+
+```bash
+apt update
+apt install apache2
+```
+
+Next thing we'll have to do is proxy all request incoming on port 80 to the gadael local port. For this, we need to install/enable mod_proxy and mod_proxy_http modules on the Apache server:
+
+```bash
+a2enmod proxy
+a2enmod proxy_http
+```
+Then we'll configure a VirtualHost like this:
+
+```bash
+vi /etc/apache2/sites-available/gadael.conf
+```
+
+With the content:
+
+```
+<VirtualHost *:80>
+   ServerAdmin contact@mydomain.com
+   ServerName mydomain.com
+
+   ProxyRequests Off
+   <Proxy *>
+      Require all granted
+   </Proxy>
+
+   <Location /nodejsAppli>
+      ProxyPass http://127.0.0.1:3000
+      ProxyPassReverse http://1127.0.0.1:3000
+   </Location>
+
+   ErrorLog ${APACHE_LOG_DIR}/gadael-error.log
+   CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+```
+
+The new virtual host need to be enabled before restarting apache:
+
+```
+a2ensite mySite.conf
+servicectrl restart apache2
+```
+
+After this last step, you can access your application using only http://mydomain.com/. This configuration can be enhanced by adding ssl certificates for the HTTPS protocol.
+
 #### Using the nginx web server
 
-Install nginx:
+Install [nginx](https://nginx.org/en/):
 
 ```bash
 apt update
