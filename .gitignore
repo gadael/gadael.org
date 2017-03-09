@@ -2,3 +2,4 @@ node_modules
 public
 .tags
 publish.sh
+db.json
