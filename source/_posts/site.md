@@ -18,9 +18,35 @@ Gadael is a powerful leave management application with rights attributions based
 
 ## Install
 
-### On a Debian System
+### On a Debian or ubuntu system
 
-The gadael debian package will be available soon!
+
+The deb package can be downloaded from the release page on the github projet:
+https://github.com/gadael/gadael/releases
+
+```bash
+dpkg -i gadael-*.x86_64.deb
+```
+
+
+### For CentOS, Fedora or redhat
+
+start by installing nodejs, for this an additional repository is needed:
+
+```bash
+curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
+```
+
+There is no mongodb package for redhat, you can add a repository for the mongodb-org package as explained on [the mongodb website](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/).
+
+The rpm package can be downloaded from the release page on the github projet:
+https://github.com/gadael/gadael/releases
+
+The following command will install the rpm file and the dependencies:
+
+```bash
+yum --nogpgcheck localinstall gadael-*.x86_64.rpm
+```
 
 ### Using a Docker container
 
