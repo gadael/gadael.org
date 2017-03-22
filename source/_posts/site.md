@@ -25,7 +25,8 @@ The deb package can be downloaded from the release page on the github projet:
 https://github.com/gadael/gadael/releases
 
 ```bash
-dpkg -i gadael-*.x86_64.deb
+apt install nodejs mongodb
+dpkg -i gadael*.x86_64.deb
 ```
 
 
