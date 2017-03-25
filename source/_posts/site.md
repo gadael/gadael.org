@@ -29,6 +29,11 @@ apt install nodejs mongodb
 dpkg -i gadael*.x86_64.deb
 ```
 
+The gadael http server can be started with:
+
+```bash
+systemctl start gadael
+```
 
 ### For CentOS, Fedora or redhat
 
@@ -48,6 +53,13 @@ The following command will install the rpm file and the dependencies:
 ```bash
 yum --nogpgcheck localinstall gadael-*.x86_64.rpm
 ```
+
+The gadael http server can be started with:
+
+```bash
+systemctl start gadael
+```
+
 
 ### Using a Docker container
 
