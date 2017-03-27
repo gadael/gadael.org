@@ -1,5 +1,6 @@
 navbar-links:
     Docs: https://www.gadael.com/en/docs/version-master/
+    Downloads: https://github.com/gadael/gadael/releases/
     About: /about/
     SaaS: https://www.gadael.com/
 
@@ -53,6 +54,11 @@ footer:
     link: 'https://www.linkedin.com/company/11006685'
     title: LinkedIn
     icon: fa-linkedin
+    enable: true
+  googleplus:
+    link: 'https://plus.google.com/communities/112621883074710822989'
+    title: Google+
+    icon: fa-google-plus
     enable: true
   stackoverflow:
     link: # your link here e.g. http...
