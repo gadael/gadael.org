@@ -18,6 +18,25 @@ Gadael is a powerful leave management application with rights attributions based
 
 ## Install
 
+
+### On Ubuntu server with the PPA
+
+You can configure a PPA server on your system to receive regular  packages updates.
+
+Add the PPA:
+
+```bash
+sudo add-apt-repository ppa:gadael/master
+sudo apt update
+```
+
+Install Gadael:
+
+```bash
+sudo apt install gadael
+```
+
+
 ### On a Debian or ubuntu system
 
 
