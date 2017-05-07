@@ -124,7 +124,11 @@ If you have no server available and want to take advantage of automatic updates 
 
 ## Using Gadael
 
+You may have to setup a database if this has not been done my your chosen installation method or if you want a new one. In most cases, Gadael is installed in /var/lib
 
+```bash
+cd /var/lib/gadael
+```
 
 A script in provided to initialize the database:
 
@@ -134,6 +138,14 @@ node install.js gadael "Your company name" FR
 First argument is the database name, default is gadael.
 Second argument is your company name, default is "Gadael".
 Third argument is the country code used to initialize the database, if not provided the leave rights list will be empty. You can check the list of [supported countries in the documentation](https://www.gadael.com/en/docs/version-master/008-the-countries.html)
+
+
+Start the service:
+
+```bash
+systemctl start gadael
+```
+Or alternatively you can start the server using nodejs directly with `node app.js`
 
 
 open http://localhost:3000 in your browser, you will be required to create an admin account on the first page.
