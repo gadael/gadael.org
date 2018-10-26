@@ -19,6 +19,40 @@ Gadael is a powerful leave management application with rights attributions based
 ## Install
 
 
+### With git and NPM
+
+Gadael can be installed from the git version, this is the best choice for taking advantage of the lastest features. For this to work, some dependencies need to be installed on the system first, you will have to install the dependencies using your system packages manager or manually.
+
+* [nodejs](https://nodejs.org/)
+* [MongoDB](https://www.mongodb.com/), the database server.
+* [git](https://git-scm.com/), this is the version control system used for Gadael development
+* [npm](https://www.npmjs.com/), for nodejs dependencies
+* [bower](https://bower.io/), for front-end dependencies
+
+Then the install process can be resumed with this list of commands:
+
+```bash
+git clone https://github.com/gadael/gadael
+cd gadael
+npm install
+bower install
+```
+
+Create the config file:
+
+```bash
+cp config.example.js config.js
+```
+
+You will have to configure an SMTP host and a root url in this file for the emails notifications to work correctly.
+
+After a database initialization like explained in the "Using Gadael" chapter, you will have to start the server manually with this command:
+
+```bash
+node app.js
+```
+
+
 ### On Ubuntu server with the PPA
 
 You can configure a PPA server on your system to receive regular  packages updates.
@@ -83,39 +117,6 @@ systemctl start gadael
 ### Using a Docker container
 
 The Gadael docker file will be available soon!
-
-### With git and NPM
-
-Gadael can be installed from the git version, this is the best choice for taking advantage of the lastest features. For this to work, some dependencies need to be installed on the system first, you will have to install the dependencies using your system packages manager or manually.
-
-* [nodejs](https://nodejs.org/)
-* [MongoDB](https://www.mongodb.com/), the database server.
-* [git](https://git-scm.com/), this is the version control system used for Gadael development
-* [npm](https://www.npmjs.com/), for nodejs dependencies
-* [bower](https://bower.io/), for front-end dependencies
-
-Then the install process can be resumed with this list of commands:
-
-```bash
-git clone https://github.com/gadael/gadael
-cd gadael
-npm install
-bower install
-```
-
-Create the config file:
-
-```bash
-cp config.example.js config.js
-```
-
-You will have to configure an SMTP host and a root url in this file for the emails notifications to work correctly.
-
-After a database initialization like explained in the "Using Gadael" chapter, you will have to start the server manually with this command:
-
-```bash
-node app.js
-```
 
 
 ### Use the SaaS version
