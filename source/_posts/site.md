@@ -18,72 +18,6 @@ Gadael is a powerful leave management application with rights attributions based
 
 ## Install
 
-
-### On Ubuntu server with the PPA
-
-You can configure a PPA server on your system to receive regular  packages updates.
-
-Add the PPA:
-
-```bash
-sudo add-apt-repository ppa:gadael/master
-sudo apt update
-```
-
-Install Gadael:
-
-```bash
-sudo apt install gadael
-```
-
-
-### On a Debian or ubuntu system
-
-
-The deb package can be downloaded from the release page on the github projet:
-https://github.com/gadael/gadael/releases
-
-```bash
-apt install nodejs mongodb
-dpkg -i gadael*.x86_64.deb
-```
-
-The gadael http server can be started with:
-
-```bash
-systemctl start gadael
-```
-
-### For CentOS, Fedora or redhat
-
-start by installing nodejs, for this an additional repository is needed:
-
-```bash
-curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
-```
-
-There is no mongodb package for redhat, you can add a repository for the mongodb-org package as explained on [the mongodb website](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/).
-
-The rpm package can be downloaded from the release page on the github projet:
-https://github.com/gadael/gadael/releases
-
-The following command will install the rpm file and the dependencies:
-
-```bash
-yum --nogpgcheck localinstall gadael-*.x86_64.rpm
-```
-
-The gadael http server can be started with:
-
-```bash
-systemctl start gadael
-```
-
-
-### Using a Docker container
-
-The Gadael docker file will be available soon!
-
 ### With git and NPM
 
 Gadael can be installed from the git version, this is the best choice for taking advantage of the lastest features. For this to work, some dependencies need to be installed on the system first, you will have to install the dependencies using your system packages manager or manually.
@@ -116,6 +50,10 @@ After a database initialization like explained in the "Using Gadael" chapter, yo
 ```bash
 node app.js
 ```
+
+### Using a Docker container
+
+The Gadael docker file will be available soon!
 
 
 ### Use the SaaS version
@@ -251,4 +189,54 @@ A restart of the server is required:
 
 ```bash
 systemctrl restart nginx
+```
+
+
+
+## Working with the API
+
+gadael allows to use the API to exchange with the database in the same way as the web interface. To do this, you need to create a specific user with the administrator role.
+
+![Creation link position in UI](images/create_api_access.png)
+
+The obtained API key allow to authenticate with oauth2.
+
+This is the list of paths with API access enabled by default:
+
+api/admin/users
+api/admin/usersstat
+api/admin/accountrights
+api/admin/accountcollections
+api/admin/departments
+api/admin/calendars
+api/admin/calendarevents
+api/admin/personalevents
+api/admin/collaborators
+api/admin/unavailableevents
+api/admin/types
+api/admin/specialrights
+api/admin/rights
+api/admin/rightrenewals
+api/admin/accountbeneficiaries
+api/admin/beneficiaries
+api/admin/requests
+api/admin/waitingrequests
+api/admin/export
+api/admin/consumption
+api/admin/invitations
+
+### Use the API to get the users list
+
+step 1, get an access token:
+```bash
+$curl -X POST -d "grant_type=client_credentials&client_id=<your client ID>&client_secret=<your client secret>" https://demo.gadael.com/login/oauth-token
+
+{"access_token":"55d99b2af2a2b2a914120e6e4b6e13f6bdbf88ed","token_type":"Bearer","expires_in":3599,"scope":[]}
+```
+
+step 2, use access token to get the list of users:
+```bash
+$curl -H "Authorization: Bearer 55d99b2af2a2b2a914120e6e4b6e13f6bdbf88ed" https://demo.gadael.com/api/admin/users
+
+[...]
 ```
