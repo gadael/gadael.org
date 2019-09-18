@@ -53,7 +53,7 @@ node app.js
 
 ### Using a Docker container
 
-The Gadael docker file will be available soon!
+https://hub.docker.com/r/webinage/gadael
 
 
 ### Use the SaaS version
