@@ -191,7 +191,18 @@ A restart of the server is required:
 systemctrl restart nginx
 ```
 
+## Configure a custom login strategy 
 
+Login options are stored in the company document in database
+
+Add a CAS authentication method with the command line mongo client :
+
+```bash
+$ mongo gadael
+> var company = db.companies.find()[0];
+> company.loginservices.cas = { "ssoBaseURL" : "https://....", "enable" : true }
+> db.companies.update({ "_id": company._id }, company);
+```
 
 ## Working with the API
 
