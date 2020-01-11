@@ -33,7 +33,7 @@ Then the install process can be resumed with this list of commands:
 ```bash
 git clone https://github.com/gadael/gadael
 cd gadael
-npm install
+npm install --production
 bower install
 ```
 
@@ -45,11 +45,28 @@ cp config.example.js config.js
 
 You will have to configure an SMTP host and a root url in this file for the emails notifications to work correctly.
 
-After a database initialization like explained in the "Using Gadael" chapter, you will have to start the server manually with this command:
+Database initialization:
+
+```bash
+node install.js gadael "Your company name" FR
+```
+First argument is the database name, default is gadael.
+Second argument is your company name, default is "Gadael".
+Third argument is the country code used to initialize the database, if not provided the leave rights list will be empty. You can check the list of [supported countries in the documentation](https://www.gadael.com/en/docs/version-master/008-the-countries.html)
+
+
+You will have to start the server with this command:
 
 ```bash
 node app.js
 ```
+
+open http://localhost:3000 in your browser, you will be required to create an admin account on the first page.
+
+![Success](images/screenshot_firstadmin.png)
+
+Congratulation! your setup is working!
+
 
 ### Using a Docker container
 
@@ -60,37 +77,6 @@ https://hub.docker.com/r/webinage/gadael
 
 If you have no server available and want to take advantage of automatic updates to the last version, you can use Gadael directly from [gadael.com](https://www.gadael.com/), it's free for team up to 5 users. If you choose to subscribe to a paid plan you will benefit from the email technical support for all your configuration problems.
 
-## Using Gadael
-
-You may have to setup a database if this has not been done my your chosen installation method or if you want a new one. In most cases, Gadael is installed in /var/lib
-
-```bash
-cd /var/lib/gadael
-```
-
-A script in provided to initialize the database:
-
-```bash
-node install.js gadael "Your company name" FR
-```
-First argument is the database name, default is gadael.
-Second argument is your company name, default is "Gadael".
-Third argument is the country code used to initialize the database, if not provided the leave rights list will be empty. You can check the list of [supported countries in the documentation](https://www.gadael.com/en/docs/version-master/008-the-countries.html)
-
-
-Start the service:
-
-```bash
-systemctl start gadael
-```
-Or alternatively you can start the server using nodejs directly with `node app.js`
-
-
-open http://localhost:3000 in your browser, you will be required to create an admin account on the first page.
-
-Congratulation! your setup is working!
-
-![Success](images/success.jpg)
 
 ### Set up a reverse proxy
 
@@ -191,7 +177,7 @@ A restart of the server is required:
 systemctrl restart nginx
 ```
 
-## Configure a custom login strategy 
+## Configure a custom login strategy
 
 Login options are stored in the company document in database
 
