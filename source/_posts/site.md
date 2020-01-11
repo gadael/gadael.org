@@ -63,7 +63,7 @@ node app.js
 
 open http://localhost:3000 in your browser, you will be required to create an admin account on the first page.
 
-![Success](images/screenshot_firstadmin.png)
+![Success](images/success.jpg)
 
 Congratulation! your setup is working!
 
