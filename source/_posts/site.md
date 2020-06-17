@@ -23,7 +23,7 @@ Gadael is a powerful leave management application with rights attributions based
 Gadael can be installed from the git version, this is the best choice for taking advantage of the lastest features. For this to work, some dependencies need to be installed on the system first, you will have to install the dependencies using your system packages manager or manually.
 
 * [nodejs](https://nodejs.org/)
-* [MongoDB](https://www.mongodb.com/), the database server.
+* [MongoDB](https://www.mongodb.com/), the database server, version 3 is required.
 * [git](https://git-scm.com/), this is the version control system used for Gadael development
 * [npm](https://www.npmjs.com/), for nodejs dependencies
 * [bower](https://bower.io/), for front-end dependencies
